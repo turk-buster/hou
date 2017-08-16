@@ -1,0 +1,955 @@
+focus_tree = {
+	id = ottoman_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = #TUR
+		}
+	}
+	
+	default = no
+	
+	focus = {
+		id = TUR_prep_attack
+		icon = GFX_goal_generic_national_unity
+
+		x = 15
+		y = 0
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = TUR_invade_europe
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = TUR_prep_attack }
+		x = 16
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = TUR_invade_middleeast
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = TUR_prep_attack }
+		x = 14
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = TUR_attack_greece
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = TUR_invade_europe }
+		available = {
+		    country_exists = GRE
+		    NOT = {
+		        is_in_faction_with = GRE
+		    }
+		}
+		will_lead_to_war_with = GRE
+		x = 16
+		y = 2
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			declare_war_on = {
+				type = take_state_focus
+				target = GRE
+				generator = { 341 } 
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_invest_in_greece
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_attack_greece }
+		available = {
+		    NOT = {
+		        country_exists = GRE
+		    }
+		}
+		x = 18
+		y = 3
+		cost = 10
+
+		#ai_will_do = {
+		#	factor = 10
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			#	Adds a civilian Factory (Constantinople)
+			random_owned_controlled_state = {
+				prioritize = { 341 }
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_invest_in_serbia
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_attack_greece }
+		available = {
+		    NOT = {
+		        country_exists = SER
+		    }
+		}
+		x = 20
+		y = 3
+		cost = 10
+
+		#ai_will_do = {
+		#	factor = 10
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			#	Adds a civilian Factory (Constantinople)
+			random_owned_controlled_state = {
+				prioritize = { 107 }
+				limit = {									
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_attack_wallachia
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = TUR_invest_in_serbia }
+		available = {
+		    is_puppet = no
+		    country_exists = ROM
+		    NOT = {
+		        is_in_faction_with = ROM
+		    }
+		}
+		will_lead_to_war_with = ROM
+		x = 16
+		y = 3
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = ROM
+				generator = { 46 } 
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_invest_in_romania
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_attack_wallachia }
+		available = {
+		    NOT = {
+		        country_exists = ROM
+		    }
+		}
+		x = 18
+		y = 4
+		cost = 10
+
+		#ai_will_do = {
+		#	factor = 10
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 46 }
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_attack_bosnia
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = TUR_invest_in_romania }
+		available = {
+		    is_puppet = no
+		    country_exists = YUG
+		    NOT = {
+		        is_in_faction_with = YUG
+		    }
+		}
+		will_lead_to_war_with = YUG
+		x = 16
+		y = 4
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = YUG
+				generator = { 104 } 
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_invest_in_bosnia
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_attack_bosnia }
+		available = {
+		    NOT = {
+		        country_exists = YUG
+		    }
+		}
+		x = 18
+		y = 5
+		cost = 10
+
+		#ai_will_do = {
+		#	factor = 10
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 104 }
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_attack_hungary
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = TUR_invest_in_bosnia }
+		available = {
+		    is_puppet = no
+		    country_exists = HUN
+		    NOT = {
+		        is_in_faction_with = HUN
+		    }
+		}
+		will_lead_to_war_with = HUN
+		x = 16
+		y = 5
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = HUN
+				generator = { 43 } 
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_invest_in_hungary
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_attack_hungary }
+		available = {
+		    NOT = {
+		        country_exists = HUN
+		    }
+		}
+		x = 18
+		y = 6
+		cost = 10
+
+		#ai_will_do = {
+		#	factor = 10
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 43 }
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_take_the_sea
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = TUR_invest_in_hungary }
+		available = {
+		    is_puppet = no
+		    country_exists = ITA
+		    NOT = {
+		        is_in_faction_with = ITA
+		    }
+		}
+		x = 16
+		y = 6
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			TUR = {
+				transfer_state = 44
+				transfer_state = 103
+				transfer_state = 187
+				transfer_state = 164
+				transfer_state = 182
+				transfer_state = 183
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_attack_karaman
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = TUR_invade_middleeast }
+		available = {
+		    is_puppet = no
+		    country_exists = ARG
+		    NOT = {
+		        is_in_faction_with = ARG
+		    }
+		}
+		will_lead_to_war_with = ARG
+		x = 14
+		y = 2
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = ARG
+				generator = { 344 } 
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_invest_in_karaman
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_attack_karaman }
+		available = {
+		    NOT = {
+		        country_exists = ARG
+		    }
+		}
+		x = 12
+		y = 3
+		cost = 10
+
+		#ai_will_do = {
+		#	factor = 10
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 344 }
+				limit = {									
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_attack_candar
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = TUR_invest_in_karaman }
+		available = {
+		    is_puppet = no
+		    country_exists = ECU
+		    NOT = {
+		        is_in_faction_with = ECU
+		    }
+		}
+		will_lead_to_war_with = ECU
+		x = 14
+		y = 3
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = ECU
+				generator = { 344 } 
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_invest_in_candar
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_attack_candar }
+		available = {
+		    NOT = {
+		        country_exists = ECU
+		    }
+		}
+		x = 12
+		y = 4
+		cost = 10
+
+		#ai_will_do = {
+		#	factor = 10
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 355 }
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_attack_trebizond
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = TUR_invest_in_candar }
+		available = {
+		    is_puppet = no
+		    country_exists = HON
+		    NOT = {
+		        is_in_faction_with = HON
+		    }
+		}
+		will_lead_to_war_with = HON
+		x = 14
+		y = 4
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = HON
+				generator = { 354 } 
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_invest_in_trebizond
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_attack_trebizond }
+		available = {
+		    NOT = {
+		        country_exists = HON
+		    }
+		}
+		x = 12
+		y = 5
+		cost = 10
+
+		#ai_will_do = {
+		#	factor = 10
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 354 }
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_attack_mamluks
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = TUR_invest_in_trebizond }
+		available = {
+		    is_puppet = no
+		    country_exists = EGY
+		    NOT = {
+		        is_in_faction_with = EGY
+		    }
+		}
+		will_lead_to_war_with = EGY
+		x = 14
+		y = 5
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = EGY
+				generator = { 454 } 
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_invest_in_mamluks
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_attack_mamluks }
+		available = {
+		    NOT = {
+		        country_exists = EGY
+		    }
+		}
+		x = 12
+		y = 6
+		cost = 10
+
+		#ai_will_do = {
+		#	factor = 10
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 454 }
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_attack_qq
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = TUR_invest_in_mamluks }
+		available = {
+		    is_puppet = no
+		    country_exists = URG
+		    NOT = {
+		        is_in_faction_with = URG
+		    }
+		}
+		will_lead_to_war_with = URG
+		x = 14
+		y = 6
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = URG
+				generator = { 291 } 
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_invest_in_qq
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_attack_qq }
+		available = {
+		    NOT = {
+		        country_exists = URG
+		    }
+		}
+		x = 12
+		y = 7
+		cost = 10
+
+		#ai_will_do = {
+		#	factor = 10
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 291 }
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_invest_in_the_sea
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_take_the_sea }
+		available = {
+		    NOT = {
+		        ITA = { controls_state = 44 }
+		    }
+		}
+		x = 18
+		y = 7
+		cost = 10
+
+		#ai_will_do = {
+		#	factor = 10
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 44 }
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_attack_the_HRE
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = TUR_take_the_sea }
+		prerequisite = { focus = TUR_attack_qq }
+		available = {
+		    is_puppet = no
+		    country_exists = AUS
+		    NOT = {
+		        is_in_faction_with = AUS
+		    }
+		}
+		will_lead_to_war_with = AUS
+		x = 15
+		y = 7
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			army_experience = 50
+			add_political_power = 300
+			create_wargoal = {
+				type = take_state_focus
+				target = AUS
+				generator = { 4 } 
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_international_alliances
+		icon = GFX_goal_generic_national_unity
+
+		x = 30
+		y = 5
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 300
+		}
+	}
+
+	focus = {
+		id = TUR_attack_naf
+		icon = GFX_goal_generic_dangerous_deal
+		mutually_exclusive = { focus = TUR_NAF_friend }
+	 	available = {
+	 		is_puppet = no
+		}
+	 	prerequisite = { focus = TUR_international_alliances }
+		x = 32
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+		add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = TUR_NAF_friend
+		icon = GFX_goal_generic_dangerous_deal
+		mutually_exclusive = { focus = TUR_attack_naf }
+	 	available = {
+	 		is_puppet = no
+		}
+	 	prerequisite = { focus = TUR_international_alliances }
+		x = 28
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = TUR_LBA_friend
+		icon = GFX_goal_generic_dangerous_deal
+	 	prerequisite = { focus = TUR_NAF_friend }
+		x = 28
+		y = 7
+		cost = 10
+
+		available_if_capitulated = yes
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			TUR = {
+				create_faction = "Islamic Alliance"
+				add_to_faction = LBA
+				LBA = {
+					add_ai_strategy = {
+					type = alliance
+					id = TUR
+					value = 200
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_attack_LBA
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = TUR_attack_naf }
+		available = {
+		    is_puppet = no
+		    country_exists = LBA
+		    NOT = {
+		        is_in_faction_with = LBA
+		    }
+		}
+		will_lead_to_war_with = LBA
+		x = 32
+		y = 7
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = LBA
+				generator = { 458 } 
+			}
+		}
+	}
+}

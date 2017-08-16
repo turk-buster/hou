@@ -1,0 +1,494 @@
+#focus_tree = {
+#	id = spanish_focus
+#
+#	country = {
+#		factor = 0
+#		
+#		modifier = {
+#			add = 10
+#			tag = SPR
+#		}
+#	}
+	
+	default = no
+
+	focus = {
+		id = SPR_finish_reqonquista
+		icon = GFX_goal_generic_national_unity
+
+		x = 10
+		y = 0
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		declare_war_on = {
+				type = take_state_focus
+				target = BRA
+				generator = { 173 } 
+			}
+		}
+	}
+
+	focus = {
+		id = SPR_industry_focus
+		icon = GFX_goal_generic_construct_civ_factory
+	 	prerequisite = { focus = SPR_finish_reqonquista }
+		x = 16
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SPR_industry_focus_2
+		icon = GFX_goal_generic_construct_civ_factory
+	 	prerequisite = { focus = SPR_industry_focus }
+		x = 16
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SPR_industry_focus_3
+		icon = GFX_goal_generic_construct_civ_factory
+	 	prerequisite = { focus = SPR_industry_focus_2 }
+		x = 16
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SPR_industry_focus_4
+		icon = GFX_goal_generic_construct_civ_factory
+	 	prerequisite = { focus = SPR_industry_focus_3 }
+		x = 16
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SPR_imperialism_focus
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = SPR_finish_reqonquista }
+		x = 10
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = SPR_iberian_wedding
+		icon = GFX_goal_support_fascism
+	 	prerequisite = { focus = SPR_imperialism_focus }
+		x = 10
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+		add_political_power = -200
+		annex_country = { target = HAI }
+			add_state_core = 168
+			add_state_core = 167
+			add_state_core = 166
+			add_state_core = 165
+			add_state_core = 177
+		}
+	}
+
+	focus = {
+		id = SPR_colombus_voyage
+		icon = GFX_goal_generic_military_sphere
+	 	prerequisite = { focus = SPR_iberian_wedding }
+		x = 12
+		y = 3
+		cost = 20
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = -200
+			SPR = {
+				transfer_state = 690
+				transfer_state = 693
+				transfer_state = 315
+				transfer_state = 319
+				transfer_state = 318
+				transfer_state = 689
+				transfer_state = 686
+				transfer_state = 694
+				transfer_state = 308
+				transfer_state = 692
+			}
+		}
+	}
+
+	focus = {
+		id = SPR_central_america_1
+		icon = GFX_goal_generic_military_sphere
+	 	prerequisite = { focus = SPR_colombus_voyage }
+		x = 12
+		y = 4
+		cost = 20
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = -200
+			SPR = {
+				transfer_state = 312
+				transfer_state = 314
+				transfer_state = 317
+				transfer_state = 316
+				transfer_state = 304
+				transfer_state = 685
+				transfer_state = 493
+				transfer_state = 489
+				transfer_state = 307
+			}
+		}
+	}
+
+	focus = {
+		id = SPR_central_america_2
+		icon = GFX_goal_generic_military_sphere
+	 	prerequisite = { focus = SPR_central_america_1 }
+		x = 12
+		y = 5
+		cost = 5
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			declare_war_on = {
+				type = take_state_focus
+				target = MEX
+				generator = { 277 } 
+			}
+		}
+	}
+
+	focus = {
+		id = SPR_central_america_3
+		icon = GFX_goal_generic_military_sphere
+	 	prerequisite = { focus = SPR_central_america_2 }
+		x = 12
+		y = 6
+		cost = 20
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = -200
+			SPR = {
+				transfer_state = 485
+				transfer_state = 479
+				transfer_state = 480
+				transfer_state = 481
+				transfer_state = 482
+				transfer_state = 483
+			}
+		}
+	}
+
+	focus = {
+		id = SPR_central_america_4
+		icon = GFX_goal_generic_military_sphere
+	 	prerequisite = { focus = SPR_central_america_3 }
+		x = 12
+		y = 7
+		cost = 20
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = -200
+			SPR = {
+				transfer_state = 484
+				transfer_state = 378
+				transfer_state = 377
+				transfer_state = 375
+				transfer_state = 376
+				transfer_state = 379
+				transfer_state = 380
+				transfer_state = 366
+			}
+		}
+	}
+
+	focus = {
+		id = SPR_annex_incas
+		icon = GFX_goal_generic_military_sphere
+	 	prerequisite = { focus = SPR_central_america_4 }
+		x = 12
+		y = 8
+		cost = 20
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = -400
+			annex_country = { target = CHL }
+			SPR = {
+				transfer_state = 488
+				transfer_state = 486
+				transfer_state = 490
+				transfer_state = 491
+				transfer_state = 494
+				transfer_state = 302
+				transfer_state = 508
+				transfer_state = 511
+				transfer_state = 512
+				transfer_state = 507
+				transfer_state = 510
+				transfer_state = 300
+				transfer_state = 509
+				transfer_state = 502
+				transfer_state = 278
+			}
+
+			POR = {
+				transfer_state = 500
+				transfer_state = 501
+				transfer_state = 503
+				transfer_state = 301
+				transfer_state = 688
+				transfer_state = 504
+				transfer_state = 487
+				transfer_state = 280
+				transfer_state = 505
+				transfer_state = 496
+				transfer_state = 498
+				transfer_state = 497
+				transfer_state = 499
+				transfer_state = 310
+				transfer_state = 309
+				transfer_state = 687
+				transfer_state = 495
+			}
+		}
+	}
+
+	focus = {
+		id = SPR_european_focus
+		icon = GFX_goal_generic_small_arms
+	 	prerequisite = { focus = SPR_iberian_wedding }
+		x = 8
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = SPR_annex_naples
+		icon = GFX_goal_generic_small_arms
+	 	prerequisite = { focus = SPR_european_focus }
+		x = 8
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			annex_country = { target = COL }
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = SPR_take_holy_city
+		icon = GFX_goal_generic_small_arms
+	 	prerequisite = { focus = SPR_annex_naples }
+		x = 8
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			declare_war_on = {
+				type = take_state_focus
+				target = PRU
+				generator = { 2 } 
+			}
+		}
+	}
+
+	focus = {
+		id = SPR_untie_iberia
+		icon = GFX_goal_generic_small_arms
+	 	prerequisite = { focus = SPR_take_holy_city }
+		x = 8
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			declare_war_on = {
+				type = take_state_focus
+				target = POR
+				generator = { 122 } 
+			}
+		}
+	}
+}

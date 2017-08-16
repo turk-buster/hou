@@ -1,0 +1,548 @@
+focus_tree = {
+	id = prussian_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = #GER
+		}
+	}
+	
+	default = no
+
+	focus = {
+		id = GER_Political_focus
+		icon = GFX_goal_generic_national_unity
+
+		x = 15
+		y = 0
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = GER_industry_focus
+		icon = GFX_goal_generic_construct_civ_factory
+	 	prerequisite = { focus = GER_Political_focus }
+		x = 16
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_conquest_focus
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = GER_Political_focus }
+		x = 14
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = GER_agressive_focus
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = GER_conquest_focus }
+		mutually_exclusive = { focus = GER_passive_focus }
+		x = 10
+		y = 2
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+		add_state_claim = 62
+		add_state_claim = 65
+		}
+	}
+
+	focus = {
+		id = GER_passive_focus
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = GER_conquest_focus }
+		mutually_exclusive = { focus = GER_agressive_focus }
+		x = 14
+		y = 2
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+		add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = GER_denounce_catholic_ideas
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = GER_agressive_focus }
+		x = 10
+		y = 3
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+		add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GER_attack_saxony
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = GER_denounce_catholic_ideas }
+		x = 10
+		y = 4
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = SAX
+				generator = { 65 } 
+			}
+		}
+	}
+
+	focus = {
+		id = GER_get_a_coast
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = GER_attack_saxony }
+		x = 10
+		y = 5
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = POM
+				generator = { 62 } 
+			}
+		}
+	}
+
+	focus = {
+		id = GER_form_prussia
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = GER_get_a_coast }
+		available = {
+			NOT = {
+		        country_exists = POM
+		        country_exists = SAX
+		   	}
+		}
+		x = 10
+		y = 6
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			annex_country = { target = BDB }
+			add_state_core = 188
+			add_state_core = 5
+			add_state_core = 85
+			add_ideas = prussian_ideas
+		}
+	}
+
+	focus = {
+		id = GER_liberate_hamburg
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = GER_liberate_silesia }
+		x = 10
+		y = 8
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			add_political_power = 120
+			add_state_core = 58
+			create_wargoal = {
+				type = take_state_focus
+				target = HMB
+				generator = { 58 } 
+			}
+		}
+	}
+
+	focus = {
+		id = GER_form_germany
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = GER_liberate_hamburg }
+		available = {
+			tag = GER
+			NOT = {
+		        country_exists = POM
+		        country_exists = BVR
+		        country_exists = WUR
+		        country_exists = SAX
+		        country_exists = WES
+		        country_exists = RHN
+		        country_exists = BDB
+		   	}
+		}
+		x = 10
+		y = 9
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			set_cosmetic_tag = GRM
+			add_state_core = 52
+			add_state_core = 53
+			add_state_core = 54
+			add_state_core = 50
+			add_state_core = 51
+			add_state_core = 42
+			add_state_core = 55
+			add_state_core = 56
+			add_state_core = 57
+			add_state_core = 59
+			add_state_core = 60
+			add_state_core = 65
+			add_state_core = 61
+			add_state_core = 62
+			add_state_core = 63
+		}
+	}
+
+	focus = {
+		id = GER_leave_HRE
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = GER_passive_focus }
+		x = 14
+		y = 3
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			if = {
+				limit = { has_idea = HRE_member }
+				remove_ideas = HRE_member
+			}
+		}
+	}
+
+	focus = {
+		id = GER_political_effort_2
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = GER_leave_HRE }
+		x = 12
+		y = 4
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+		add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = GER_political_effort_1
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = GER_leave_HRE }
+		x = 14
+		y = 4
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+		add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = GER_liberate_silesia
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = GER_form_prussia }
+		x = 10
+		y = 7
+		cost = 10
+		#ai_will_do = {
+		#	factor = 2.5
+		#	modifier = {
+		#		factor = 0
+		#		NOT = { SOV = { has_war = yes } }
+		#	}
+		completion_reward = {
+			add_political_power = 120
+			add_state_core = 67
+			add_state_core = 66
+			create_wargoal = {
+				type = take_state_focus
+				target = CZE
+				generator = { 66 67 } 
+			}
+		}
+	}
+
+	focus = {
+		id = GER_industry_focus_2
+		icon = GFX_goal_generic_construct_civ_factory
+	 	prerequisite = { focus = GER_industry_focus }
+		x = 16
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_industry_focus_3
+		icon = GFX_goal_generic_construct_civ_factory
+	 	prerequisite = { focus = GER_industry_focus_2 }
+		x = 16
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_arms_focus
+		icon = GFX_goal_generic_construct_mil_factory
+	 	prerequisite = { focus = GER_industry_focus_3 }
+		x = 16
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_arms_focus_2
+		icon = GFX_goal_generic_construct_mil_factory
+	 	prerequisite = { focus = GER_arms_focus }
+		x = 16
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_arms_focus_3
+		icon = GFX_goal_generic_construct_mil_factory
+	 	prerequisite = { focus = GER_arms_focus_2 }
+		x = 16
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_extra_tech_slot
+		icon = GFX_focus_research
+		text = extra_tech_slot
+		prerequisite = { focus = GER_arms_focus_3 }
+		x = 16
+		y = 7
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 2
+		}
+	}
+}

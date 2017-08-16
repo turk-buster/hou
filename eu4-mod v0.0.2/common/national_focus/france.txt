@@ -1,0 +1,435 @@
+focus_tree = {
+	id = french_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = #FRA
+		}
+	}
+	
+	default = no
+
+	focus = {
+		id = FRA_maine_surrender
+		icon = GFX_goal_generic_national_unity
+
+		x = 15
+		y = 0
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			transfer_state = 30
+			transfer_state = 15
+		}
+	}
+
+	focus = {
+		id = FRA_germany_focus
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_maine_surrender }
+		x = 16
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = FRA_iberia_focus
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_maine_surrender }
+		x = 14
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+
+	focus = {
+		id = FRA_untie_france
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_maine_surrender }
+		x = 20
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_state_claim = 18
+			add_state_claim = 14
+		}
+	}
+
+	focus = {
+		id = FRA_take_brittany
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_untie_france }
+		x = 20
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+		declare_war_on = {
+				type = take_state_focus
+				target = NIC
+				generator = { 14 } 
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_burgundy_enemy
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_take_brittany }
+	 	mutually_exclusive = { focus = FRA_burgundy_friend }
+		x = 20
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+		declare_war_on = {
+				type = take_state_focus
+				target = BEL
+				generator = { 18 } 
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_take_piedmont
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_burgundy_enemy }
+		x = 20
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+		declare_war_on = {
+				type = take_state_focus
+				target = BOL
+				generator = { 158 } 
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_genoa_friend
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_burgundy_friend }
+		x = 22
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			FRA = {
+				add_to_faction = BOL
+				BOL = {
+					add_ai_strategy = {
+					type = alliance
+					id = BOL
+					value = 200
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_burgundy_friend
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_take_brittany }
+	 	mutually_exclusive = { focus = FRA_burgundy_enemy }
+		x = 22
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			create_faction = "French Union"
+			add_political_power = 100
+			FRA = {
+				add_to_faction = BEL
+				BEL = {
+					add_ai_strategy = {
+					type = alliance
+					id = BEL
+					value = 200
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_iberia_friend
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_iberia_focus }
+	 	mutually_exclusive = { focus = FRA_iberia_enemy }
+		x = 14
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = FRA_iberia_enemy
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_iberia_focus }
+	 	mutually_exclusive = { focus = FRA_iberia_friend }
+		x = 12
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = FRA_portugal_puppet
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_iberia_enemy }
+		x = 12
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = POR
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_spain_puppet
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_portugal_puppet }
+		x = 12
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SPR
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_dutch_conquest
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_germany_focus }
+		x = 16
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = HOL
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_join_hre
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_dutch_conquest }
+	 	mutually_exclusive = { focus = FRA_take_the_rhine }
+	 	x = 18
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+		add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = FRA_take_the_rhine
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = FRA_dutch_conquest }
+	 	mutually_exclusive = { focus = FRA_join_hre }
+		x = 16
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+		create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RHN
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_colonize_canada
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = FRA_maine_surrender }
+		x = 28
+		y = 1
+		cost = 40
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+		FRA = {
+				transfer_state = 468
+				transfer_state = 466
+				transfer_state = 331
+				transfer_state = 464
+				transfer_state = 465
+				transfer_state = 730
+				transfer_state = 332
+				transfer_state = 276
+				transfer_state = 682
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_colonize_louisiana
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = FRA_colonize_canada }
+		x = 28
+		y = 2
+		cost = 40
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+		FRA = {
+				transfer_state = 389
+				transfer_state = 390
+				transfer_state = 384
+				transfer_state = 383
+				transfer_state = 374
+				transfer_state = 371
+				transfer_state = 372
+				transfer_state = 373
+				transfer_state = 392
+				transfer_state = 391
+				transfer_state = 392
+				transfer_state = 393
+				transfer_state = 394
+				transfer_state = 395
+				transfer_state = 261
+				transfer_state = 396
+			}
+		}
+	}
+}

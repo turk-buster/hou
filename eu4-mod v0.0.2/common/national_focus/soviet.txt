@@ -1,0 +1,467 @@
+#focus_tree = {
+#	id = russian_focus
+#
+#	country = {
+#		factor = 0
+#		
+#		modifier = {
+#			add = 10
+#			tag = SOV
+#		}
+#	}
+	
+	default = no
+
+	focus = {
+		id = SOV_destroy_novgorod
+		icon = GFX_goal_generic_national_unity
+
+		x = 15
+		y = 0
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		declare_war_on = {
+				type = take_state_focus
+				target = NOV
+				generator = { 195 } 
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_industry_focus
+		icon = GFX_goal_generic_construct_civ_factory
+	 	prerequisite = { focus = SOV_destroy_novgorod }
+		x = 16
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_conquest_focus
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = SOV_destroy_novgorod }
+		x = 14
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = SOV_integrate_psokov
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = SOV_conquest_focus }
+		x = 14
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			annex_country = { target = EST }
+		}
+	}
+
+	focus = {
+		id = SOV_integrate_perm
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = SOV_integrate_psokov }
+		x = 14
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			annex_country = { target = PRM }
+		}
+	}
+
+	focus = {
+		id = SOV_expansion_south
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = SOV_integrate_perm }
+		x = 14
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+		declare_war_on = {
+				type = take_state_focus
+				target = GDH
+				generator = { 217 } 
+			}
+		}	
+	}
+
+	focus = {
+		id = SOV_expansion_south_2
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = SOV_expansion_south }
+		x = 14
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+		declare_war_on = {
+				type = take_state_focus
+				target = UKR
+				generator = { 137 } 
+			}
+		}	
+	}
+
+	focus = {
+		id = SOV_expansion_east
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = SOV_expansion_south_2 }
+		x = 14
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+		SOV = {
+				transfer_state = 262
+				transfer_state = 581
+				transfer_state = 402
+				transfer_state = 583
+				transfer_state = 653
+				transfer_state = 580
+				transfer_state = 579
+				transfer_state = 403
+				transfer_state = 571
+				transfer_state = 572
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_expansion_east_2
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = SOV_expansion_east }
+		x = 14
+		y = 7
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+		SOV = {
+				transfer_state = 516
+				transfer_state = 577
+				transfer_state = 578
+				transfer_state = 570
+				transfer_state = 40
+				transfer_state = 576
+				transfer_state = 569
+				transfer_state = 568
+				transfer_state = 567
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_expansion_east_3
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = SOV_expansion_east_2 }
+		x = 14
+		y = 8
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+		SOV = {
+				transfer_state = 575
+				transfer_state = 565
+				transfer_state = 574
+				transfer_state = 562
+				transfer_state = 637
+				transfer_state = 644
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_expansion_west
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = SOV_expansion_east_3 }
+		x = 14
+		y = 10
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			GER = {
+				transfer_state = 86
+			}
+			declare_war_on = {
+				type = take_state_focus
+				target = LIT
+				generator = { 201 } 
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_industry_focus_2
+		icon = GFX_goal_generic_construct_civ_factory
+	 	prerequisite = { focus = SOV_industry_focus }
+		x = 16
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_industry_focus_3
+		icon = GFX_goal_generic_construct_civ_factory
+	 	prerequisite = { focus = SOV_industry_focus_2 }
+		x = 16
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_arms_focus
+		icon = GFX_goal_generic_construct_mil_factory
+	 	prerequisite = { focus = SOV_industry_focus_3 }
+		x = 16
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_arms_focus_2
+		icon = GFX_goal_generic_construct_mil_factory
+	 	prerequisite = { focus = SOV_arms_focus }
+		x = 16
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_arms_focus_3
+		icon = GFX_goal_generic_construct_mil_factory
+	 	prerequisite = { focus = SOV_arms_focus_2 }
+		x = 16
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_extra_tech_slot
+		icon = GFX_focus_research
+		text = extra_tech_slot
+		prerequisite = { focus = SOV_arms_focus_3 }
+		x = 16
+		y = 7
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 2
+		}
+	}
+}
