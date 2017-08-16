@@ -24,16 +24,13 @@ state={
 			air_base = 4
 			4109 = {
 				naval_base = 9
-
 			}
-
 		}
 		add_core_of = GUA
 		add_core_of = GRE
-
 	}
 
 	provinces={
-		863 976 1109 3864 3973 3988 4109 6930 7127 
+		976 1109 3988 4109 7127 
 	}
 }

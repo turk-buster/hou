@@ -163,7 +163,7 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = nazism
 	traits = {
-		#
+		dislikes_turks
 	}
 }
 
@@ -171,7 +171,7 @@ create_country_leader = {
 create_corps_commander = {
 	name = "Markos Drakos"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
-	traits = { hill_fighter }
+	traits = { kebab_slayer }
 	skill = 3
 }
 
