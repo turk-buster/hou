@@ -159,7 +159,7 @@ create_country_leader = {
 
 create_corps_commander = {
 	name = "Novislav djajic"
-	picture = "gfx/leaders/Serbia/leader_Novislav.tga"
+	portrait_path =  "gfx/new_leaders/Serbia/leader_Novislav.tga"
 	traits = {
 		kebab_slayer
 	}
