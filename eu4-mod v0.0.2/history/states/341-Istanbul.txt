@@ -1,0 +1,33 @@
+state= {
+	id=341
+	name="STATE_341"
+	manpower = 1404509
+	resources={
+		chromium=84
+		steel = 20
+	}
+	
+	state_category = metropolis
+
+	history= {
+		owner = GRE
+		victory_points = {
+			9833 45
+		}
+		buildings = {
+			infrastructure = 10
+			industrial_complex = 6
+			dockyard = 1
+			arms_factory = 3
+			air_base = 4
+			9833 = {
+				naval_base = 8
+			}
+		}
+		add_core_of = GRE
+		add_claim_by = TUR
+	}
+	provinces=
+	{
+ 922 6895 9833 	}
+}
