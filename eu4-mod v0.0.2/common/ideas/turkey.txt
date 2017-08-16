@@ -18,7 +18,7 @@ ideas = {
 			}
 
 			modifier = {
-				unity_factor = -0.25
+				unity_factor = -0.33
 			}
 
 			modifier = {
