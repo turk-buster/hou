@@ -1,0 +1,34 @@
+state={
+	id=743
+	name="STATE_743"
+
+	history={
+		owner = BOL
+		victory_points = {
+			6788 10 
+		}
+		buildings = {
+			infrastructure = 1
+
+		}
+		buildings = {
+			infrastructure = 7
+			arms_factory = 7
+			industrial_complex = 1
+			dockyard = 2
+			air_base = 8
+			6788 = {
+				naval_base = 8
+			}
+		}
+		add_core_of = BOL
+
+	}
+
+	provinces={
+		6788
+	}
+	manpower = 765476
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+}
