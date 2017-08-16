@@ -1,3 +1,6 @@
+leader_traits = {
+
+
 kebab_slayer = {
 
 	random = no
@@ -13,3 +16,6 @@ kebab_slayer = {
 			factor = 0
 	}
 }	
+
+
+}
