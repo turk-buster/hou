@@ -4,10 +4,6 @@ oob = "BAS_1936"
 
 set_research_slots = 3
 
-add_ideas = {
-	anti_german_military
-}
-
 set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
@@ -157,6 +153,17 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
+		dislikes_turks
+	}
+}
+
+create_corps_commander = {
+	name = "Novislav djajic"
+	picture = "gfx/leaders/Serbia/leader_Novislav.dds"
+	traits = {
+		kebab_slayer
+	}
+	skill = 8
 		#
 	}
 }
