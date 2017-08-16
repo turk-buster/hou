@@ -12,7 +12,6 @@ kebab_slayer = {
 	army_org_factor = 0.1
 	army_morale_factor = 0.1
 	winter_attrition_factor = -0.25
-	winter_attrition_factor = -0.24
 
 	}
 	ai_will_do = {
