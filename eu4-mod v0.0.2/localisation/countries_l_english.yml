@@ -1648,6 +1648,9 @@
  GHN_fascism:0 "Ghana"
  GHN_fascism_DEF:0 "Ghana"
  GHN_fascism_ADJ:0 "Ghana"
+ TLE_fascism:0 "Tlemcen"
+ TLE_fascism_DEF:0 "Tlemcen"
+ TLE_fascism_ADJ:0 "Tlemcen"
  #
  GRM_fascism:0 "German Empire"
  GRM_fascism_DEF:0 "The German Empire"

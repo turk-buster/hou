@@ -823,6 +823,11 @@ RHN = {
 	color_ui = rgb { 152 61 96 }
 }
 
+TLE = {
+	color = rgb { 63 82 96 }
+	color_ui = rgb { 63 82 96 }
+}
+
 D01 = {
 	color = rgb { 200 100 31 }
 	color_ui = rgb { 245 123 38 }

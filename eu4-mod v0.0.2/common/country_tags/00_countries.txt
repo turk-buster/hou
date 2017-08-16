@@ -187,3 +187,5 @@ JLO = "countries/Jolof.txt"
 MLI = "countries/Mali.txt"
 BNI = "countries/Benin.txt"
 GHN = "countries/Ghana.txt"
+# nafrica
+TLE = "countries/Tlemcen.txt"
