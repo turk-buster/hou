@@ -159,13 +159,12 @@ create_country_leader = {
 
 create_corps_commander = {
 	name = "Novislav djajic"
-	picture = "gfx/leaders/Serbia/leader_Novislav.dds"
+	picture = "gfx/leaders/Serbia/leader_Novislav.tga"
 	traits = {
 		kebab_slayer
 	}
 	skill = 8
-		#
-	}
+		
 }
 
 create_country_leader = {

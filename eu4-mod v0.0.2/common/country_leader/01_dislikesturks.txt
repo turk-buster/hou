@@ -1,3 +1,5 @@
+leader_traits = {
+
 dislikes_turks = {
 
 	ai_strategy = {
@@ -11,3 +13,5 @@ dislikes_turks = {
 			factor = 1
 		}
 }	
+
+}
