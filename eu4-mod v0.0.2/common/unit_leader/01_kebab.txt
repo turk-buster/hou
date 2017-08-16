@@ -11,7 +11,8 @@ kebab_slayer = {
 	max_dig_in = 5
 	army_org_factor = 0.1
 	army_morale_factor = 0.1
-	winter_attrition_factor = -0.24
+	winter_attrition_factor = -0.25
+
 	}
 	ai_will_do = {
 			factor = 0
