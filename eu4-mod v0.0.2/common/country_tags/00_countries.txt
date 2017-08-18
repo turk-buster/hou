@@ -191,3 +191,7 @@ BNI = "countries/Benin.txt"
 GHN = "countries/Ghana.txt"
 # nafrica
 TLE = "countries/Tlemcen.txt"
+# china
+JIA = "countries/Jianzhou.txt"
+XXI = "countries/Xi.txt"
+SHN = "countries/Shun.txt"
