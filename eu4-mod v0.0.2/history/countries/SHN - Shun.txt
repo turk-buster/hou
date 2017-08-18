@@ -1,4 +1,4 @@
-﻿OOB = "BAS_1936"
+OOB = "BAS_1936"
 
 set_research_slots = 3
 
@@ -42,13 +42,35 @@ set_convoys = 5
 
 #Victor Emmanuel III of Italy after 39
 create_country_leader = {
-	name = "William Von Manstein"
-	#desc = "POLITICS_KING_ZOG_DESC"
-	picture = "Portrait_Albania_King_Zog.dds"
+	name = "Adolf Hitler"
+	desc = "POLITICS_ADOLF_HITLER_DESC"
+	picture = "Portrait_Germany_Adolf_Hitler.dds"
 	expire = "1965.1.1"
-	ideology = Stalinism
+	ideology = nazism
 	traits = {
-		#
+		dictator
+	}
+}
+
+create_country_leader = {
+	name = "Konrad Adenauer"
+	desc = "POLITICS_KONRAD_ADENAUER_DESC"
+	picture = "Portrait_Germany_Konrad_Adenauer.dds"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Wilhelm Pieck"
+	desc = "POLITICS_WILHELM_PIECK_DESC"
+	picture = "Portrait_Germany_Wilhelm_Pieck.dds"
+	expire = "1965.1.1"
+	ideology = stalinism
+	traits = {
+		stalins_puppet
+		exiled
 	}
 }
 
