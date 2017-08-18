@@ -15,8 +15,7 @@ set_technology = {
 }
 
 add_ideas = {
-	german_advisors
-	CHI_communist_uprisings
+	ming_ideas
 }
 
 set_research_slots = 3

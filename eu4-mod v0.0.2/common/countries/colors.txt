@@ -823,6 +823,27 @@ RHN = {
 	color_ui = rgb { 152 61 96 }
 }
 
+TLE = {
+	color = rgb { 63 82 96 }
+	color_ui = rgb { 63 82 96 }
+}
+#China
+
+JIA = {
+	color = rgb { 83 45 56 }
+	color_ui = rgb { 83 45 56 }
+}
+
+XXI = {
+	color = rgb { 76 81 74 }
+	color_ui = rgb { 76 81 74 }
+}
+
+SHN = {
+	color = rgb { 141 140 145 }
+	color_ui = rgb { 141 140 145 }
+}
+
 D01 = {
 	color = rgb { 200 100 31 }
 	color_ui = rgb { 245 123 38 }

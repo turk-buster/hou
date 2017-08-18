@@ -1,4 +1,4 @@
-﻿OOB = "BAS_1936"
+OOB = "BAS_1936"
 
 set_research_slots = 3
 
