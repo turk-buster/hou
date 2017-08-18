@@ -26,7 +26,7 @@ country_event = { #Revolution for chinese minors
 	option = {
 		name = ccwar.1.a #smash
 		ai_chance = {
-			factor = 75
+			factor = 95
 		}
 		add_political_power = 100
 		XXI = {
@@ -63,7 +63,7 @@ country_event = { #Revolution for chinese minors
 	option = {
 		name = ccwar.1.b #negotiate
 		ai_chance = {
-			factor = 25
+			factor = 5
 		}
 		add_political_power = -100
 		XXI = {
