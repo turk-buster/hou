@@ -55,7 +55,7 @@ country_event = { #Revolution for chinese minors
 		CHI = {
 			country_event = {
 				id = ccwar.4 
-				days = 4
+				days = 2
 			}
 		}
 	}

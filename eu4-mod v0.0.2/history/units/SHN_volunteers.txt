@@ -106,13 +106,13 @@ units = {
 	#Kita Homengun - North Japan Army
 	division = {
 		name = "7 'Kuma' Hohei Shidan"
-		location = 4010 #Asahigawa
+		location = 4547 #Asahigawa
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.3
 	}
 	division = {
 		name = "Ominato Kichi Kaiheidan"
-		location = 4010 #Ominato Naval Base
+		location = 4547 #Ominato Naval Base
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
@@ -120,14 +120,14 @@ units = {
 	}
 	division = {
 		name = "Chishima Kichi Shubitai"
-		location = 4010 #Shumshu
+		location = 4547 #Shumshu
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3	
 	}
 	division = {
 		name = "Karafuto Dokuritsu Konsei Ryodan"
-		location = 4010 #Toyohara
+		location = 4547 #Toyohara
 		division_template = "Dokuritsu Konsei Ryodan"
 		start_experience_factor = 0.3
 	}
@@ -135,26 +135,26 @@ units = {
 	#Chuo Homengun - East Japan Army
 	division = {
 		name = "2 'Yu' Hohei Shidan"
-		location = 4010 #Shizuoka
+		location = 4547 #Shizuoka
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.3
 	}
 	division = {
 		name = "Konoe Shidan"
-		location = 4010 #Tokyo
+		location = 4547 #Tokyo
 		division_template = "Jidousha Shidan"			# Elite Guard unit (highest experience, best equipment)
 		start_experience_factor = 0.4
 	}
 	division = {
 		name = "Osaka Kichi Kaiheidan"
-		location = 4010 #Osaka
+		location = 4547 #Osaka
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3	
 	}
 	division = {
 		name = "Yokosuka Tokubetsu Rikusentai"
-		location = 4010 #Yokosuka
+		location = 4547 #Yokosuka
 		division_template = "Rikusentai"
 		start_experience_factor = 0.3
 	}
@@ -162,13 +162,13 @@ units = {
 	#Roppou Homengun - West Japan Army
 	division = {
 		name = "4 'Yodo' Hohei Shidan"
-		location = 4010 #Nagasaki
+		location = 4547 #Nagasaki
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.3
 	}
 	division = {
 		name = "Kure Kichi Kaiheidan"
-		location = 4010 #Hiroshima
+		location = 4547 #Hiroshima
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
@@ -176,7 +176,7 @@ units = {
 	}
 	division = {
 		name = "Josh Cena (:"
-		location = 4010 #Sasebo/Nagasaki
+		location = 4547 #Sasebo/Nagasaki
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3		
@@ -186,7 +186,7 @@ units = {
 	#Taiwan Homengun - Taiwan Army
 	division = {
 		name = "Taiwan Kichi Shubitai"
-		location = 4010 #Taipei
+		location = 4547 #Taipei
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3		
@@ -195,19 +195,19 @@ units = {
 	#3 Homengun - 3rd Field Army
 	division = {
 		name = "3 'Ko' Hohei Shidan"
-		location = 4010 #Taipei
+		location = 4547 #Taipei
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.3
 	}
 	division = {
 		name = "6 'Mei' Hohei Shidan"
-		location = 4010 #Taipei
+		location = 4547 #Taipei
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.3
 	}
 	division = {
 		name = "11 'Nishiki' Hohei Shidan"
-		location = 4010 #Taipei
+		location = 4547 #Taipei
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.3
 	}
@@ -216,19 +216,19 @@ units = {
 	#Chosen Gun - Korea Army
 	division = {
 		name = "19 'Tora' Hohei Shidan"
-		location = 4010 #Pyongyang
+		location = 4547 #Pyongyang
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.3
 	}
 	division = {
 		name = "20 'Asa' Hohei Shidan"
-		location = 4010 #Seoul
+		location = 4547 #Seoul
 		division_template = "Hohei Shidan"
 		start_experience_factor = 0.3
 	}
 	division = {
 		name = "Chinkai Kichi Kaiheidan"
-		location = 4010 #Pusan
+		location = 4547 #Pusan
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3		
@@ -239,7 +239,7 @@ units = {
 
 	division = {
 		name = "Okinawa Kichi Shubitai"
-		location = 4010 #Naha
+		location = 4547 #Naha
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3	
@@ -249,7 +249,7 @@ units = {
 	#1 Konkyochi Ichigun
 	division = {
 		name = "Saipan Kichi Shubitai"
-		location = 4010 #Saipan
+		location = 4547 #Saipan
 		division_template = "Chuton-chi Shidan"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3		
