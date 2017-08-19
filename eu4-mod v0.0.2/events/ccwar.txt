@@ -55,7 +55,7 @@ country_event = { #Revolution for chinese minors
 		CHI = {
 			country_event = {
 				id = ccwar.4 
-				days = 8
+				days = 4
 			}
 		}
 	}
@@ -212,10 +212,10 @@ country_event = { #oirat takes land
 		}
 	}
 	option = {
+		name = ccwar.6.b
 		ai_chance = {
 			factor = 20
 		}
-		name = ccwar.6.b
 		add_political_power = -20
 	}
 }
