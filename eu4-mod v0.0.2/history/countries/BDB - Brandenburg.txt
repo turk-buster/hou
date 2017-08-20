@@ -1,4 +1,4 @@
-﻿capital = 64
+﻿capital = 85
 
 OOB = "BAS_1936"
 
