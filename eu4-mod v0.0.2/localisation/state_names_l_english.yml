@@ -744,7 +744,7 @@
  ####### Mod
  STATE_743:0 "Genoa"
  STATE_744:0 "Sudpreussen"
- STATE_745:0 "Lubeck"
+ STATE_745:0 "Lübeck"
  STATE_746:0 "Neumark"
  STATE_747:0 "Silistre"
  STATE_748:0 "Negroponte"
@@ -753,3 +753,7 @@
  STATE_751:0 "Hamburg"
  STATE_752:0 "Sudsudetnland"
  STATE_753:0 "Theodoro"
+ STATE_754:0 "Albenga"
+ STATE_755:0 "Görz"
+ STATE_756:0 "Genoese Crimea"
+ STATE_757:0 "Azov"

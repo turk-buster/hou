@@ -13,13 +13,11 @@ state={
 				naval_base = 5
 
 			}
-
 		}
-
 	}
 
 	provinces={
-		599 6626 11595 11735 
+		11735 
 	}
 	manpower=1063159
 	buildings_max_level_factor=1.000

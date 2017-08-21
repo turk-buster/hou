@@ -1,0 +1,19 @@
+state= {
+	id=754
+	name="STATE_754"
+	manpower = 158150 
+	state_category = town
+	
+	history={
+		owner = BOL
+		buildings = {
+			infrastructure = 7
+			arms_factory = 2
+		}
+		add_core_of = BOL
+	}
+
+	provinces={
+		3772 11891 
+ 	}
+}
