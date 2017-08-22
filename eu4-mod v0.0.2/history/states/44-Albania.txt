@@ -19,7 +19,6 @@ state={
 			infrastructure = 3
 			arms_factory = 1
 			industrial_complex = 2 
-			air_base = 3
 		}
 		add_core_of = ALB
 		add_core_of = ITA
@@ -32,6 +31,6 @@ state={
 	}
 
 	provinces={
-		3884 3896 9780 9875 9914 11762 
+		3884 9780 9914 
 	}
 }
