@@ -844,6 +844,11 @@ SHN = {
 	color_ui = rgb { 141 140 145 }
 }
 
+CRI = {
+	color = rgb { 0  80  230 }
+	color_ui = rgb { 0  80  230 }	
+}
+
 D01 = {
 	color = rgb { 200 100 31 }
 	color_ui = rgb { 245 123 38 }

@@ -1187,8 +1187,8 @@
  MNT_democratic_ADJ:0 "Montenegrin"
  MNT_neutrality_ADJ:0 "Montenegrin"
  MNT_communism_ADJ:0 "Montenegrin"
- UKR_fascism:0 "Crimea"
- UKR_fascism_DEF:0 "Crimea"
+ UKR_fascism:0 "Ruthenia "
+ UKR_fascism_DEF:0 "Ruthenia"
  UKR_democratic:0 "Republic of Ukraine"
  UKR_democratic_DEF:0 "The Republic of Ukraine"
  UKR_neutrality:0 "Ukraine"
@@ -1661,6 +1661,10 @@
  XXI_fascism:0 "Xi"
  XXI_fascism_DEF:0 "Xi"
  XXI_fascism_ADJ:0 "Xi"
+ #europeNEW
+ CRI_fascism:0 "Crimea"
+ CRI_fascism_DEF:0 "Crimea"
+ CRI_fascism_ADJ:0 "Crimean"
  #
  GRM_fascism:0 "German Empire"
  GRM_fascism_DEF:0 "The German Empire"
