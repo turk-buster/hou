@@ -2,16 +2,16 @@
 state={
 	id=45
 	name="STATE_45" # Vojvodina
-	manpower = 1026200
+	manpower = 4026200
 	
-	state_category = rural
+	state_category = megalopolis
 
 	history={
-		owner = HUN
+		owner = HNG
 		buildings = {
 			infrastructure = 6
 		}
-		add_core_of = HUN
+		add_core_of = HNG
 		add_core_of = SER
 	}
 

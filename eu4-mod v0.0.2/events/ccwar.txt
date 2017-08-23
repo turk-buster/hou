@@ -26,7 +26,7 @@ country_event = { #Revolution for chinese minors
 	option = {
 		name = ccwar.1.a #smash
 		ai_chance = {
-			factor = 75
+			factor = 95
 		}
 		add_political_power = 100
 		XXI = {
@@ -55,7 +55,7 @@ country_event = { #Revolution for chinese minors
 		CHI = {
 			country_event = {
 				id = ccwar.4 
-				days = 8
+				days = 2
 			}
 		}
 	}
@@ -63,7 +63,7 @@ country_event = { #Revolution for chinese minors
 	option = {
 		name = ccwar.1.b #negotiate
 		ai_chance = {
-			factor = 25
+			factor = 5
 		}
 		add_political_power = -100
 		XXI = {
@@ -101,13 +101,15 @@ country_event = { #War china
 
 	option = {
 			name = ccwar.4.a
-			create_wargoal = {			
-				type = annex_everything
-				target = XXI 
+			declare_war_on = {
+				target = SHN
+				type = take_state_focus
+				generator = { 605 } 
 			}
-			create_wargoal = {
-				type = annex_everything
-				target = SHN 
+			declare_war_on = {
+				target = XXI
+				type = take_state_focus
+				generator = { 622 } 
 			}
 			add_political_power = 200
 		}
@@ -163,5 +165,92 @@ country_event = { #shn volunteers
 		add_political_power = 20
 		add_manpower = 5000
 		load_oob = SHN_volunteers
+	}
+}
+#___________________________________________________________________________________________________________
+# land theft
+#___________________________________________________________________________________________________________
+country_event = { #oirat takes land
+	id = ccwar.6
+	title = ccwar.6.t
+	desc = ccwar.6.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MON
+		SHN = {
+			has_war_with = CHI 
+		}
+		XXI = {
+			has_war_with = CHI 
+		}
+		date > 1937.1.1
+	}
+
+	mean_time_to_happen = {
+		days = 4
+	}
+
+	option = {
+		name = ccwar.6.a
+		ai_chance = {
+			factor = 80
+		}
+		add_political_power = 20
+		add_manpower = 5000
+		CHI = { 
+			country_event = ccwar.7 
+			if = {
+				limit = {
+					CHI = { 
+						has_war_with = XXI
+						has_war_with = SHN
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ccwar.6.b
+		ai_chance = {
+			factor = 20
+		}
+		add_political_power = -20
+	}
+}
+country_event = { #china fights back
+	id = ccwar.7
+	title = ccwar.7.t
+	desc = ccwar.7.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ccwar.6.a
+		ai_chance = {
+			factor = 80
+		}
+		add_political_power = 20
+		add_manpower = 5000
+		declare_war_on = {
+				target = MON
+				type = take_state_focus
+				generator = { 330 } 
+			}
+	}
+	option = {
+		name = ccwar.6.b
+		ai_chance = {
+			factor = 20
+		}
+		add_political_power = -200
+		MON = {
+			transfer_state = 621
+			transfer_state = 616
+
+			add_state_core = 621
+			add_state_core = 616
+		}
 	}
 }

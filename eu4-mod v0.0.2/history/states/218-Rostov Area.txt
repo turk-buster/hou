@@ -7,20 +7,14 @@ state={
 	state_category = city
 
 	history={
-		owner = UKR
-		victory_points = {
-			9417 15 
-		}
+		owner = CRM
 		buildings = {
 			infrastructure = 5
 			arms_factory = 1
 			industrial_complex = 1
 			air_base = 3
-			9417 ={
-				naval_base = 5
-			}
 		}
-		add_core_of = UKR
+		add_core_of = CRM
 		1939.1.1 = {
 			buildings = {
 				arms_factory = 2
@@ -29,6 +23,6 @@ state={
 	}
 
 	provinces={
-		585 6445 9417 9430 11418 11434 11450 11559 
+		11418 11434 11450 
 	}
 }

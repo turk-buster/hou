@@ -1,0 +1,25 @@
+state= {
+	id=751
+	name="STATE_751"
+	manpower = 58150 
+	state_category = town
+	
+	history={
+		owner = HMB
+		victory_points = {
+			9347 15 
+		}
+		buildings = {
+			infrastructure = 7
+			arms_factory = 2
+			9347 ={
+				naval_base = 8
+			}
+		}
+		add_core_of = HMB
+	}
+
+	provinces= {
+		9347
+ 	}
+}

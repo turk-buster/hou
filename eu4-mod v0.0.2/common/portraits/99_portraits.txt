@@ -1,0 +1,39 @@
+CRM = {
+	army = {
+		male = {
+			"gfx/leaders/GER/Portrait_Germany_Generic_land_1.dds"
+			"gfx/leaders/GER/Portrait_Germany_Generic_land_2.dds"
+			"gfx/leaders/GER/Portrait_Germany_Generic_land_3.dds"
+			"gfx/leaders/GER/Portrait_Germany_Generic_land_4.dds"
+			"gfx/leaders/GER/Portrait_Germany_Generic_land_5.dds"
+		}
+	}
+	
+	navy = {
+		male = {
+			"gfx/leaders/GER/Portrait_Germany_Generic_navy_1.dds"
+			"gfx/leaders/GER/Portrait_Germany_Generic_navy_2.dds"
+			"gfx/leaders/GER/Portrait_Germany_Generic_navy_3.dds"
+		}
+	}
+}
+
+HNG = {
+	army = {
+		male = {
+			"gfx/leaders/GER/Portrait_Germany_Generic_land_1.dds"
+			"gfx/leaders/GER/Portrait_Germany_Generic_land_2.dds"
+			"gfx/leaders/GER/Portrait_Germany_Generic_land_3.dds"
+			"gfx/leaders/GER/Portrait_Germany_Generic_land_4.dds"
+			"gfx/leaders/GER/Portrait_Germany_Generic_land_5.dds"
+		}
+	}
+	
+	navy = {
+		male = {
+			"gfx/leaders/GER/Portrait_Germany_Generic_navy_1.dds"
+			"gfx/leaders/GER/Portrait_Germany_Generic_navy_2.dds"
+			"gfx/leaders/GER/Portrait_Germany_Generic_navy_3.dds"
+		}
+	}
+}

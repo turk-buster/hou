@@ -1,0 +1,25 @@
+state= {
+	id=753
+	name="STATE_753"
+	manpower = 158150 
+	state_category = city
+	
+	history={
+		owner = CRM
+		victory_points = {
+			3686 20
+		}
+		buildings = {
+			infrastructure = 7
+			arms_factory = 2
+			3686 ={
+				naval_base = 10
+			}
+		}
+		add_core_of = CRM
+	}
+
+	provinces={
+		3686 6704 
+ 	}
+}

@@ -1,0 +1,21 @@
+state= {
+	id=746
+	name="STATE_746"
+	manpower = 3248150 
+	state_category = town
+	
+	history=
+	{
+		owner = BDB
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+		}
+		add_core_of = BDB
+		add_claim_by = GER
+	}
+
+	provinces= {
+		537 6236 9252 9277 9387 
+ 	}
+}

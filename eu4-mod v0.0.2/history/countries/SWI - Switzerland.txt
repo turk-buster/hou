@@ -1,6 +1,6 @@
-﻿capital = 3
+﻿capital = 151
 
-oob = "SWI_1936"
+oob = "BAS_1936"
 
 set_research_slots = 3
 
