@@ -15,10 +15,6 @@ state={
 			air_base = 3
 		}
 		add_core_of = CRM
-		1939.1.1 = {
-			buildings = {
-				arms_factory = 2
-			}
 		}
 	}
 
