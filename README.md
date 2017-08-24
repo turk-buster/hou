@@ -1,6 +1,5 @@
-# hearts of universalis mod v0.0.5 (Bunch a flags)
-# if you upate add an addition number to the v#.#.# (small update = add 0.0.01, large update, add 0.1)
-# plan for today, east asia (8/16/17)
-# Add all chinese minor states possible, give china national spirits for their rebels, add leaders and flags for china (if possible)
-# if time allows it, add events to china for the rebels *this means add the rebel nations* and give the japanese minors flags and leaders.
+# hearts of universalis mod v0.1.5 (Bunch a states)
+# if you upate add an additional number to the v#.#.# (small update = add 0.0.1, large update, add 0.1.0)
+# added a bunch a states , not all of germany tho(NO NEW NATIONS! ONLY STATES!)
+#future plans - all flags, finish HRE states and nations, customize agean islands, optional (add japan states), BURGUNDY OPTIMIZED
 
