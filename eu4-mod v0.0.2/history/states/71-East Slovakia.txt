@@ -1,22 +1,22 @@
 state={
 	id=71
 	name="STATE_71"
-	manpower = 1197800
+	manpower = 2297800
 	
-	state_category = rural
+	state_category = megalopolis
 	
 	history={
-		owner = HUN
+		owner = HNG
 		buildings = {
 			infrastructure = 4
-			industrial_complex = 2
+			industrial_complex = 3
 		}
-		add_core_of = HUN
+		add_core_of = HNG
 
 		1939.3.14 = {
-			owner = SLO
-			controller = SLO
-			add_core_of = SLO
+			owner = HNG
+			controller = HNG
+			add_core_of = HNG
 		}
 	}
 

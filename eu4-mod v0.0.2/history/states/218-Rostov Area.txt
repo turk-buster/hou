@@ -7,14 +7,15 @@ state={
 	state_category = city
 
 	history={
-		owner = CRI
+		owner = CRM
 		buildings = {
 			infrastructure = 5
 			arms_factory = 1
 			industrial_complex = 1
 			air_base = 3
 		}
-		add_core_of = CRI
+		add_core_of = CRM
+		}
 	}
 
 	provinces={

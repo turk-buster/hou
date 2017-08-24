@@ -6,7 +6,7 @@ state={
 	state_category = town
 
 	history={
-		owner = CRI
+		owner = CRM
 		victory_points = {
 			11405 1
 		}
@@ -14,7 +14,12 @@ state={
 			infrastructure = 5
 			air_base = 3
 		}
-		add_core_of = CRI
+		add_core_of = CRM
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 1
+			}
+		}
 	}
 
 	provinces={
